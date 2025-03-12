@@ -3,31 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Modul4;
 
 namespace Modul4
 {
     class KodeProduk
     {
-        public string Produk { get; set; }
+        public enum produkElektronik { Laptop, Smartphone, Tablet, Headset, Keyboard, Mouse, Printer, Monitor, Smartwatch, Kamera };
 
-        public string Kode { get; set; }
-
-        public static List<KodeProduk> GetKodeProduks()
+        public static string getKodeProduk(produkElektronik elektronik)
         {
-            return new List<KodeProduk>
-            {
-                new KodeProduk { Produk = "Laptop", Kode = "E100" },
-                new KodeProduk { Produk = "Smartphone", Kode = "E101" },
-                new KodeProduk { Produk = "Tablet", Kode = "E102" },
-                new KodeProduk { Produk = "Headset", Kode = "E103" },
-                new KodeProduk { Produk = "Keyboard", Kode = "E104" },
-                new KodeProduk { Produk = "Mouse", Kode = "E105" },
-                new KodeProduk { Produk = "Printer", Kode = "E106" },
-                new KodeProduk { Produk = "Monitor", Kode = "E107" },
-                new KodeProduk { Produk = "Smartwatch", Kode = "E108" },
-                new KodeProduk { Produk = "kamera", Kode = "E109" },
-            };
+            string[] kodeProduk = { "E100", "E101", "E102", "E103", "E104", "E105", "E106", "E107", "E108", "E109" };
+
+            return kodeProduk[(int)elektronik];
+
         }
+
     }
 }
